@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  speedbet:
+    build:
+      context: .
+      args:
+        - VITE_APP_ID=f38b7c40bd423770c0de900324d1da7fba7095ba54a2b5843c439c25dafc5f98
+        - VITE_CHAIN_ID=781078b5a05e20fb1cd13c06622ccc91f813d112f020816e799a9ec1ba4298dc
+        - VITE_LINERA_FAUCET_URL=https://faucet.testnet-conway.linera.net
+    ports:
+      - "80:80"
+      - "8080:8080"
+      - "8081:8081"
+    environment:
+      - LINERA_FAUCET_URL=https://faucet.testnet-conway.linera.net
+      - APP_ID=f38b7c40bd423770c0de900324d1da7fba7095ba54a2b5843c439c25dafc5f98
+      - CHAIN_ID=781078b5a05e20fb1cd13c06622ccc91f813d112f020816e799a9ec1ba4298dc
+    volumes:
+      - linera-data:/root/.linera
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    restart: unless-stopped
+
+volumes:
+  linera-data:
