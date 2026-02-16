@@ -1,6 +1,6 @@
 # SpeedBet Arena
 
-Price prediction duels on Linera. Two players bet on whether BTC or ETH goes up or down in the next 60 seconds. Winner takes the pot minus a 2.5% platform fee.
+Real-time price prediction duels on Linera. Two players bet on whether BTC or ETH goes up or down in the next 60 seconds. Winner takes the pot minus a 2.5% platform fee.
 
 **Live demo:** [speedbet-arena.vercel.app](https://speedbet-arena.vercel.app)
 
