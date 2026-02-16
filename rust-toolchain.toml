@@ -1,0 +1,7 @@
+# rust-toolchain.toml
+# CRITICAL: Rust versions > 1.86.0 generate WASM opcodes not supported by Conway testnet
+
+[toolchain]
+channel = "1.86.0"
+targets = ["wasm32-unknown-unknown"]
+profile = "minimal"
